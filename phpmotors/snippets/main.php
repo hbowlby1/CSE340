@@ -7,7 +7,7 @@
         <li class="colorText">Fuzzy dice!</li>
     </ul>
     <button>Own Today</button>
-    <img src="/images/delorean.jpg" alt="Image of the Delorean car.">
+    <img src="/phpmotors/images/delorean.jpg" alt="Image of the Delorean car.">
 </section>
 
 <div class="fullsizeWrapper">
@@ -27,22 +27,22 @@
         <h2 class="headings">Delorean Upgrades</h2>
         <div class="gridWrapper">
             <div id="fluxCap">
-                <img class="imageBackground" src="images/upgrades/flux-cap.png" alt="Image for flux capacitor upgrade.">
+                <img class="imageBackground" src="/phpmotors/images/upgrades/flux-cap.png" alt="Image for flux capacitor upgrade.">
                 <a href="#" title="Link to view the flux capacitor upgrade">Flux Capacitor</a>
             </div>
 
             <div id="flames">
-                <img class="imageBackground" src="images/upgrades/flame.jpg" alt="Image for flame decal upgrade.">
+                <img class="imageBackground" src="/phpmotors/images/upgrades/flame.jpg" alt="Image for flame decal upgrade.">
                 <a href="#" title="Link to view the flame decal upgrade">Flame Decals</a>
             </div>
 
             <div id="bumperStickers">
-                <img class="imageBackground" src="images/upgrades/bumper_sticker.jpg" alt="Image for bumber sticker upgrade.">
+                <img class="imageBackground" src="/phpmotors/images/upgrades/bumper_sticker.jpg" alt="Image for bumber sticker upgrade.">
                 <a href="#" title="Link to view the bumber sticker upgrade">Bumper Stickers</a>
             </div>
 
             <div id="hubcaps">
-                <img class="imageBackground" src="images/upgrades/hub-cap.jpg" alt="Image for hub caps upgrade.">
+                <img class="imageBackground" src="/phpmotors/images/upgrades/hub-cap.jpg" alt="Image for hub caps upgrade.">
                 <a href="#" title="Link to view the hub caps upgrade">Hub Caps</a>
             </div>
         </div>

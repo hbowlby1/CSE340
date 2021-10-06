@@ -1,2 +1,2 @@
 <img src="/phpmotors/images/site/logo.png" alt="Logo for PHP Motors">
-<a href="#" title="LOGIN FOR YOUR ACCOUNT">My Account</a>
+<a href="/phpmotors/accounts/index.php?action=login" title="LOGIN FOR YOUR ACCOUNT">My Account</a>

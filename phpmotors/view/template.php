@@ -2,11 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css" media="screen">
-    <link rel="stylesheet" href="css/styles.css" media="screen">
+    <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
 
     <title>PHP Motors</title>
 </head>
@@ -17,7 +13,8 @@
     </header>
 
     <nav>
-        <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; ?>
+        <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; 
+        echo $navList; ?>
     </nav>
 
     <main>
@@ -30,5 +27,5 @@
 
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/scripts/scripts.php'; ?>
 </body>
-    
+
 </html>
