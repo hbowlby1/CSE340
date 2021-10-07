@@ -21,13 +21,13 @@
             <fieldset>
                 <legend>Enter your information</legend>
                 <label for="firstName"><span>First Name:</span></label>
-                <input placeholder ="First Name"type="text" id="firstName" name="firstName" required>
+                <input placeholder ="First Name" type="text" id="firstName" name="firstName" required>
 
                 <label for="lastName"><span>Last name:</span></label>
-                <input placeholder ="Last Name"type="text" id="lastName" name="lastName" required>
+                <input placeholder ="Last Name" type="text" id="lastName" name="lastName" required>
 
                 <label for="email"><span>Email:</span></label>
-                <input placeholder ="Email"type="email" id="email" name="email" required>
+                <input placeholder ="Email" type="email" id="email" name="email" required>
 
                 <label for="password"><span>Password: </span></label>
                 <input type="password" id="password" name="password" placeholder ="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
