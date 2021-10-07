@@ -21,16 +21,16 @@
             <fieldset>
                 <legend>Enter your information</legend>
                 <label for="firstName"><span>First Name:</span></label>
-                <input type="text" id="firstName" name="firstName" required>
+                <input placeholder ="First Name"type="text" id="firstName" name="firstName" required>
 
                 <label for="lastName"><span>Last name:</span></label>
-                <input type="text" id="lastName" name="lastName" required>
+                <input placeholder ="Last Name"type="text" id="lastName" name="lastName" required>
 
                 <label for="email"><span>Email:</span></label>
-                <input type="email" id="email" name="email" required>
+                <input placeholder ="Email"type="email" id="email" name="email" required>
 
                 <label for="password"><span>Password: </span></label>
-                <input type="password" id="password" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                <input type="password" id="password" name="password" placeholder ="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                 <span class="passwordInfo">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
 
                 <input type="submit" name="submit" id="regBtn" class="sign-in" value="Register">

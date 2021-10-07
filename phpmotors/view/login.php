@@ -22,10 +22,10 @@
             <legend>Enter your Information</legend>
                 
             <label for="email" class="test"><span>Email:</span></label>
-            <input type="email" id="email" name="email" required>
+            <input placeholder ="Email"type="email" id="email" name="email" required>
 
             <label for="password" class="test"><span>Password:</span></label>
-            <input type="password" id="password" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+            <input placeholder ="Password" type="password" id="password" name="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
             <span class="passwordInfo">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
             <input type="submit" value="sign-in" class="sign-in">
             <input type="hidden" name="action" value=Login>
