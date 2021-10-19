@@ -17,26 +17,34 @@
     </nav>
 
     <main>
-        <form action="/phpmotors/account/index.php" method="post">
-            <fieldset>
-                <legend>Enter your information</legend>
-                <label for="firstName"><span>First Name:</span></label>
-                <input placeholder ="First Name" type="text" id="firstName" name="firstName" required>
 
-                <label for="lastName"><span>Last name:</span></label>
-                <input placeholder ="Last Name" type="text" id="lastName" name="lastName" required>
+        <?php
+        if (isset($message)) {
+            echo $message;
+        }
+        ?>
 
-                <label for="email"><span>Email:</span></label>
-                <input placeholder ="Email" type="email" id="email" name="email" required>
+        <form method="post" action="/phpmotors/accounts/index.php">
+            <form action="/phpmotors/account/index.php" method="post">
+                <fieldset>
+                    <legend>Enter your information</legend>
+                    <label for="firstName"><span>First Name:</span></label>
+                    <input placeholder="First Name" type="text" id="firstName" name="clientFirstName" required>
 
-                <label for="password"><span>Password: </span></label>
-                <input type="password" id="password" name="password" placeholder ="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                <span class="passwordInfo">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+                    <label for="lastName"><span>Last name:</span></label>
+                    <input placeholder="Last Name" type="text" id="lastName" name="clientLastname" required>
 
-                <input type="submit" name="submit" id="regBtn" class="sign-in" value="Register">
-                <input type="hidden" name="action" value="register">
-            </fieldset>
-        </form>
+                    <label for="email"><span>Email:</span></label>
+                    <input placeholder="Email" type="email" id="email" name="clientEmail" required>
+
+                    <label for="password"><span>Password: </span></label>
+                    <input type="password" id="password" name="clientPassword" placeholder="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    <span class="passwordInfo">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
+
+                    <input type="submit" name="submit" id="regBtn" class="sign-in" value="Register">
+                    <input type="hidden" name="action" value="register">
+                </fieldset>
+            </form>
     </main>
 
     <footer>
