@@ -32,11 +32,11 @@
             <input placeholder ="Password" type="password" id="password" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
             <span class="passwordInfo">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
             <input type="submit" value="sign-in" class="sign-in">
-            <input type="hidden" name="action" value=Login>
+            <input type="hidden" name="action" value=login>
             </fieldset>
         </form>
 
-        <p>Don't have an account <a href="/phpmotors/accounts/index.php/?action=register" title="CREATE ACCOUNT" class="accountCreate">Click Here</a></p>
+        <p>Don't have an account <a href="/phpmotors/accounts/index.php/?action=registration" title="CREATE ACCOUNT" class="accountCreate">Click Here</a></p>
     </main>
 
     <footer>

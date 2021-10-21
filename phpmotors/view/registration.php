@@ -25,11 +25,10 @@
         ?>
 
         <form method="post" action="/phpmotors/accounts/index.php">
-            <form action="/phpmotors/account/index.php" method="post">
                 <fieldset>
                     <legend>Enter your information</legend>
                     <label for="firstName"><span>First Name:</span></label>
-                    <input placeholder="First Name" type="text" id="firstName" name="clientFirstName" required>
+                    <input placeholder="First Name" type="text" id="firstName" name="clientFirstname" required>
 
                     <label for="lastName"><span>Last name:</span></label>
                     <input placeholder="Last Name" type="text" id="lastName" name="clientLastname" required>
