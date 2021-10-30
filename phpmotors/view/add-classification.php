@@ -30,7 +30,7 @@
                 <input <?php if (isset($classificationName)) {
                             echo "value='$classificationName'";
                         } ?>name="classificationName" id="classificationName" type="text" maxlength="30">
-                <span>Please keep the classification under 30 characters.</span>
+                <p class="center">Please keep the classification under 30 characters.</p>
                 <br>
 
                 <input type="submit" value="Add Classification" id="btn">

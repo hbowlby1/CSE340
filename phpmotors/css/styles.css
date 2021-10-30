@@ -18,6 +18,14 @@ h6 {
     font-family: "Open Sans", sans-serif;
 }
 
+/* adds cursor function on input button types */
+
+#btn:hover{
+    cursor: pointer;
+    background-color:#3a3a3a;
+    color: white;
+}
+
 /* used to center items */
 .center {
     text-align: center;
