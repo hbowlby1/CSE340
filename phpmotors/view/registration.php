@@ -28,13 +28,13 @@
                 <fieldset>
                     <legend>Enter your information</legend>
                     <label for="firstName"><span>First Name:</span></label>
-                    <input placeholder="First Name" type="text" id="firstName" name="clientFirstname" required>
+                    <input <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";} ?> placeholder="First Name" type="text" id="firstName" name="clientFirstname" required>
 
                     <label for="lastName"><span>Last name:</span></label>
-                    <input placeholder="Last Name" type="text" id="lastName" name="clientLastname" required>
+                    <input <?php if(isset($clientLastname)){echo "value='$clientLastname'";} ?>placeholder="Last Name" type="text" id="lastName" name="clientLastname" required>
 
                     <label for="email"><span>Email:</span></label>
-                    <input placeholder="Email" type="email" id="email" name="clientEmail" required>
+                    <input <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> placeholder="Email" type="email" id="email" name="clientEmail" required>
 
                     <label for="password"><span>Password: </span></label>
                     <input type="password" id="password" name="clientPassword" placeholder="password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">

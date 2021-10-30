@@ -27,12 +27,12 @@
             <legend>Enter your Information</legend>
                 
             <label for="email" class="test"><span>Email:</span></label>
-            <input placeholder ="Email" type="email" id="email" name="clientEmail" required>
+            <input <?php if(isset($clientEmail)){echo "value='$clientEmail'";} ?> placeholder ="Email" type="email" id="email" name="clientEmail" required>
             <label for="password" class="test"><span>Password:</span></label>
             <input placeholder ="Password" type="password" id="password" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
             <span class="passwordInfo">Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
             <input type="submit" value="sign-in" class="sign-in">
-            <input type="hidden" name="action" value=login>
+            <input type="hidden" name="action" value=Login>
             </fieldset>
         </form>
 
