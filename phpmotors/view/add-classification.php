@@ -29,7 +29,7 @@
                 <label for="classificationName">Give a Classification Name</label><br>
                 <input <?php if (isset($classificationName)) {
                             echo "value='$classificationName'";
-                        } ?>name="classificationName" id="classificationName" type="text" maxlength="30">
+                        } ?> name="classificationName" id="classificationName" type="text" maxlength="30">
                 <p class="center">Please keep the classification under 30 characters.</p>
                 <br>
 
