@@ -26,6 +26,11 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 
+// check if the first name cookie is available
+if(isset($_COOKIE['firstname'])){
+    $cookieFirstName = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
+}
+
 switch ($action) {
     case 'something':
 

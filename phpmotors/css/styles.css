@@ -51,6 +51,12 @@ header a {
     font-weight: 600;
 }
 
+/* welcome message */
+.welcome{
+    grid-column: 2;
+    justify-self: end;
+}
+
 /* start of the nav bar */
 
 nav {
