@@ -33,6 +33,15 @@ switch ($action) {
         $clientEmail = checkEmail($clientEmail);
         $checkPassword = checkPassword($clientPassword);
 
+
+        // checking for existing email address
+        $existingEmail = checkExistingEmail($clientEmail);
+        if($existingEmail){
+            $message = "<p>This email already exists please login.</p>";
+            include '../view/login.php';
+            exit;
+        }
+
         // check for missing data
         if(empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($checkPassword)){
             $message = '<p class="center"> Please provide information for all empty form fields.</p>';
