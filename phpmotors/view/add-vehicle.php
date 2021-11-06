@@ -1,18 +1,19 @@
-<?php 
-    // Build a dynamic select dropdown list using the $classifications array
-    $selectList = '<select name="classificationId" id="classificationId" required>';
-    $selectList .= '<option value="">-Choose Car Classification-</option>';
-    foreach ($classifications as $classification) {
-        $selectList .= "<option value='$classification[classificationId]'";
-        if(isset($classificationId)){
-            if($classification['classificationId'] === $classificationId){
-                $selectList .= ' selected ';
-            }
+<?php
+// Build a dynamic select dropdown list using the $classifications array
+$selectList = '<select name="classificationId" id="classificationId" required>';
+$selectList .= '<option value="">-Choose Car Classification-</option>';
+foreach ($classifications as $classification) {
+    $selectList .= "<option value='$classification[classificationId]'";
+    if (isset($classificationId)) {
+        if ($classification['classificationId'] === $classificationId) {
+            $selectList .= ' selected ';
         }
-        $selectList .= ">$classification[classificationName]</option>";
     }
-    $selectList .= '</select>';
-?><!DOCTYPE html>
+    $selectList .= ">$classification[classificationName]</option>";
+}
+$selectList .= '</select>';
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,6 +21,14 @@
 
     <title>PHP Motors</title>
 </head>
+
+<!-- checks user level and if they are logged in -->
+<?php
+if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] != 3) {
+    header('Location: ../index.php');
+    exit;
+}
+?>
 
 <body>
     <header>
@@ -54,7 +63,9 @@
                         } ?> type="text" id="invModel" name="invModel"><br>
 
                 <label for="invDescription">Description</label><br>
-                <textarea rows="2" cols="20" id="invDescription" name="invDescription"><?php if(isset($_POST['invDescription'])){echo htmlentities($_POST['invDescription'], ENT_QUOTES);}?></textarea><br>
+                <textarea rows="2" cols="20" id="invDescription" name="invDescription"><?php if (isset($_POST['invDescription'])) {
+                                                                                            echo htmlentities($_POST['invDescription'], ENT_QUOTES);
+                                                                                        } ?></textarea><br>
 
                 <label for="invImage">Image Path</label><br>
                 <input <?php if (isset($invImage)) {

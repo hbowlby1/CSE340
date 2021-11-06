@@ -1,6 +1,9 @@
 <?php
 //this is the main controller
 
+//create or access a session
+session_start();
+
 // Get the database connection file
 require_once 'library/connections.php';
 // Get the PHP Motors model for use as needed
@@ -31,6 +34,15 @@ if(isset($_COOKIE['firstname'])){
     $cookieFirstName = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
 }
 
+// check if the last name cookie is available
+if(isset($_COOKIE['lastname'])){
+    $cookieLastName = filter_input(INPUT_COOKIE, 'lastname', FILTER_SANITIZE_STRING);
+}
+
+// check if email cookie is available
+if(isset($_COOKIE['email'])){
+    $cookieLastName = filter_input(INPUT_COOKIE, 'email', FILTER_SANITIZE_EMAIL);
+}
 switch ($action) {
     case 'something':
 

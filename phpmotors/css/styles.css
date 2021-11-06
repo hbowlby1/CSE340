@@ -406,3 +406,7 @@ label {
         height: 300px;
     }
 }
+/* start of admin page */
+.adminList{
+    list-style: none;
+}

@@ -18,11 +18,11 @@
 
     <main>
         <?php
-            if (isset($message)){
-                echo $message;
+            if (isset($_SESSION['message'])){
+                echo $_SESSION['message'];
             }
         ?>
-        <form action="#" method="get">
+        <form action="/phpmotors/accounts/" method="post">
             <fieldset>
             <legend>Enter your Information</legend>
                 

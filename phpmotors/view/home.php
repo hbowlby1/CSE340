@@ -9,9 +9,6 @@
 <body>
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
-        <?php if (isset($cookieFirstName)) {
-            echo "<span class='welcome'>Welcome $cookieFirstName</span>";
-        } ?>
     </header>
 
     <nav>

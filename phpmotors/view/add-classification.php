@@ -11,7 +11,14 @@
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
     </header>
-
+    <!-- checks if user is logged in -->
+    <?php
+    if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] != 3) {
+        header('Location: ../index.php');
+        exit;
+    }
+    ?>
+    
     <nav>
         <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; 
         echo $navList; ?>
