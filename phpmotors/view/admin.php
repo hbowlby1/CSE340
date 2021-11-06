@@ -1,24 +1,21 @@
-<?php
-//check if the user is logged in
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    echo "Welcome to the member's area!";
-} else {
-    header("Location: /phpmotors/index.php");
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
-
     <title>PHP Motors</title>
 </head>
 
 <body>
     <header>
         <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
+        <?php
+        //check if the user is logged in
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+            echo "<span></span>";
+        } else {
+            header("Location: /phpmotors/index.php");
+        } ?>
     </header>
 
     <nav>
@@ -32,7 +29,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         <li> Firstname: " . $_SESSION['clientData']['clientFirstname'] . "</li>
                         <li> Lastname: " . $_SESSION['clientData']['clientLastname'] . "</li>
                         <li> Email: " . $_SESSION['clientData']['clientEmail'] . "</li>
-                    </ul"; ?>
+                    </ul>"; ?>
         <?php
         if ($_SESSION['clientData']['clientLevel'] == 3) {
             echo "<h2>Inventory Management</h2>";
