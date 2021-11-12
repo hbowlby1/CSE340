@@ -8,8 +8,8 @@ foreach ($classifications as $classification) {
         if ($classification['classificationId'] === $classificationId) {
             $selectList .= ' selected ';
         }
-    }elseif(isset($invInfo['classificationId'])){
-        if($classification['classificationId'] === $invInfo['classificationId']){
+    } elseif (isset($invInfo['classificationId'])) {
+        if ($classification['classificationId'] === $invInfo['classificationId']) {
             $selectList .= ' selected ';
         }
     }
@@ -122,6 +122,12 @@ if (!$_SESSION['loggedin'] || $_SESSION['clientData']['clientLevel'] != 3) {
 
                 <input type="submit" name="submit" value="Update Vehicle" id="btn">
                 <input type="hidden" name="action" value="updateVehicle">
+                <input type="hidden" name="invId" value="<?php if (isset($invInfo['invId'])) {
+                                                                echo $invInfo['invId'];
+                                                            } elseif (isset($invId)) {
+                                                                echo $invId;
+                                                            } ?> ">
+
             </form>
         </div>
     </main>

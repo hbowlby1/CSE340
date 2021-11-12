@@ -12,6 +12,10 @@
         header('Location: ../index.php');
         exit;
     }
+
+    if (isset($_SESSION['message'])) {
+        $message = $_SESSION['message'];
+    }
     ?>
 
  <body>
@@ -57,3 +61,5 @@
  </body>
 
  </html>
+
+ <?php unset($_SESSION['message']); ?>
