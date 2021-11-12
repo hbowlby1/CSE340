@@ -24,12 +24,27 @@
             echo $navList; ?>
      </nav>
 
-     <main>
+     <main class="center">
          <div class="main_content">
              <h1>Add a Car Classification</h1>
              <a href="/phpmotors/vehicles/?action=classification-page">Add Classification</a><br>
              <a href="/phpmotors/vehicles/?action=vehicle-page">Add Vehicle</a>
          </div>
+
+         <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            if (isset($classificationList)) {
+                echo '<h2>Vehicles By Classification</h2>';
+                echo '<p>Choose a classification to see those vehicles</p>';
+                echo $classificationList;
+            }
+            ?>
+         <noscript>
+             <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
+         </noscript>
+         <table id="inventoryDisplay"></table>
      </main>
 
      <footer>
@@ -37,6 +52,8 @@
      </footer>
 
      <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/scripts/scripts.php'; ?>
+
+     <script src="../js/inventory.js"></script>
  </body>
 
  </html>

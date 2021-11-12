@@ -4,29 +4,31 @@
 
 
 //Add new car classification
-function addClassification($classificationName){
- // Create a connection object using the phpmotors connection function
- $db = phpmotorsConnect();
- // The SQL statement
- $sql = 'INSERT INTO carclassification (classificationName)
+function addClassification($classificationName)
+{
+    // Create a connection object using the phpmotors connection function
+    $db = phpmotorsConnect();
+    // The SQL statement
+    $sql = 'INSERT INTO carclassification (classificationName)
      VALUES (:classificationName)';
- // Create the prepared statement using the phpmotors connection
- $stmt = $db->prepare($sql);
- // statement with the actual values in the variables
- // and tells the database the type of data it is
- $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
- $stmt->execute();
- // Ask how many rows changed as a result of our insert
- $rowsChanged = $stmt->rowCount();
- // Close the database interaction
- $stmt->closeCursor();
- // Return the indication of success (rows changed)
- return $rowsChanged; 
+    // Create the prepared statement using the phpmotors connection
+    $stmt = $db->prepare($sql);
+    // statement with the actual values in the variables
+    // and tells the database the type of data it is
+    $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
+    $stmt->execute();
+    // Ask how many rows changed as a result of our insert
+    $rowsChanged = $stmt->rowCount();
+    // Close the database interaction
+    $stmt->closeCursor();
+    // Return the indication of success (rows changed)
+    return $rowsChanged;
 }
 
 
 //Add vehicles
-function addVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId){
+function addVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId)
+{
     // Create a connection object using the phpmotors connection function
     $db = phpmotorsConnect();
     // The SQL statement
@@ -51,5 +53,18 @@ function addVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbna
     // Close the database interaction
     $stmt->closeCursor();
     // Return the indication of success (rows changed)
-    return $rowsChanged;   
-   }
+    return $rowsChanged;
+}
+
+// Get vehicles by classificationId 
+function getInventoryByClassification($classificationId)
+{
+    $db = phpmotorsConnect();
+    $sql = ' SELECT * FROM inventory WHERE classificationId = :classificationId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_INT);
+    $stmt->execute();
+    $inventory = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $inventory;
+}
