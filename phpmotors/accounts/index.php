@@ -119,6 +119,61 @@ switch ($action) {
         session_destroy();
         header('Location: ../index.php');
 
+    case 'update':
+        // Filter and store the data
+        $clientFirstname = trim(filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING));
+        $clientLastname = trim(filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING));
+        $clientEmail = trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL));
+        if ($clientEmail != $_SESSION['clientData']['clientEmail']) {
+            if (checkExistingEmail($clientEmail)) {
+                $_SESSION['account-message'] = '<p>Email already exists. Try again.</p>';
+                include '../view/client-update.php';
+                exit;
+            } else {
+                $clientEmail = checkEmail($clientEmail);
+            }
+        }
+
+        // Check for missing data
+        if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)) {
+            $_SESSION['account-message'] = '<p>Update did not work. Check your values and try again.</p>';
+            include '../view/client-update.php';
+            exit;
+        }
+        if (updateInfo($clientFirstname, $clientLastname, $clientEmail, $_SESSION['clientData']['clientId'])) {
+            $_SESSION['account-message'] = "<p>Your account has successfully been updated.</p>";
+            $clientData = getClientById($_SESSION['clientData']['clientId']);
+            array_pop($clientData);
+            $_SESSION['clientData'] = $clientData;
+            include '../view/admin.php';
+        } else {
+            $_SESSION['account-message'] = "<p>I'm sorry. The update failed. Check your values and try again.</p>";
+            include '../view/admin.php';
+        }
+
+        break;
+
+    case 'updateUser':
+        include '../view/client-update.php';
+        break;
+
+    case 'changePassword':
+        $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING));
+        if (checkPassword($clientPassword)) {
+            $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+            if (changePassword($hashedPassword, $_SESSION['clientData']['clientId'])) {
+                $_SESSION['password-message'] = "<p>Your password has been changed.</p>";
+                include '../view/admin.php';
+            } else {
+                $_SESSION['password-message'] = "<p>Password failed to change. Please try again.</p>";
+                include '../view/admin.php';
+            }
+        } else {
+            $_SESSION['password-message'] = "<p>Password does not meet requirements. Try again.</p>";
+            include '../view/client-update.php';
+        }
+        break;
+
     default:
         include('../view/admin.php');
         break;

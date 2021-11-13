@@ -25,6 +25,7 @@
 
     <main class="center">
         <?php echo "<h1>logged in " . $_SESSION['clientData']['clientFirstname'] . " " . $_SESSION['clientData']['clientLastname'] . "</h1>"; ?>
+        <a href="/phpmotors/accounts/index.php?action=updateUser">Update Account</a>
         <?php echo "<ul class='adminList'>
                         <li> Firstname: " . $_SESSION['clientData']['clientFirstname'] . "</li>
                         <li> Lastname: " . $_SESSION['clientData']['clientLastname'] . "</li>
