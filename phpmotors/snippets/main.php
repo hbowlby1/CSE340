@@ -7,7 +7,7 @@
         <li class="colorText">Fuzzy dice!</li>
     </ul>
     <button>Own Today</button>
-    <img src="/phpmotors/images/delorean.jpg" alt="Image of the Delorean car.">
+    <img src="/phpmotors/images/vehicles/delorean.jpg" alt="Image of the Delorean car.">
 </section>
 
 <div class="fullsizeWrapper">

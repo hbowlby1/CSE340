@@ -7,6 +7,13 @@ font-family: 'Open Sans', sans-serif; */
 html {
     font-family: "Gemunu Libre", sans-serif;
     font-size: 22px;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
 }
 
 h1,
@@ -20,9 +27,9 @@ h6 {
 
 /* adds cursor function on input button types */
 
-#btn:hover{
+#btn:hover {
     cursor: pointer;
-    background-color:#3a3a3a;
+    background-color: #3a3a3a;
     color: white;
 }
 
@@ -52,7 +59,7 @@ header a {
 }
 
 /* welcome message */
-.welcome{
+.welcome {
     grid-column: 2;
     justify-self: end;
 }
@@ -274,6 +281,28 @@ label {
     height: 300px;
 }
 
+/* Styling for the vehicle classification pages */
+#inv-display {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#inv-display li {
+    margin-bottom: 0.5em;
+    border: 1px #ccc solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+}
+
+#inv-display li img {
+    max-width: 100%;
+}
+
+
+
+
 /* start of very small devices (mainly to fix nav) */
 
 @media only screen and (max-width: 420px) {
@@ -405,8 +434,34 @@ label {
         width: 335px;
         height: 300px;
     }
+
+    /* styling for the vehicle classification page large screen only */
+    #inv-display {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+
+    #inv-display h2 {
+        font-size: 1rem;
+        border-top: 3px solid black;
+    }
+
+    #inv-display li {
+        max-width: 200px;
+        flex: 1 0 auto;
+        text-align: center;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #inv-display span {
+        width: 100%;
+        margin-top: -20px;
+    }
 }
 /* start of admin page */
-.adminList{
+.adminList {
     list-style: none;
 }
