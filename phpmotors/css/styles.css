@@ -300,7 +300,41 @@ label {
     max-width: 100%;
 }
 
+/* start of admin page */
+.adminList {
+    list-style: none;
+}
 
+/* start of vehicle detail page small view */
+.main{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.main img{
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+#inv-details{
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+#inv-text p:nth-child(even){
+    background-color:lightgray;
+    font-weight: 800;
+}
+
+.detail-center{
+    text-align: center;
+}
+
+#vehicle-desc{
+    width: 50%;
+    margin: 0 auto;
+}
 
 
 /* start of very small devices (mainly to fix nav) */
@@ -460,8 +494,15 @@ label {
         width: 100%;
         margin-top: -20px;
     }
+
+    /* start of single vehicle page */
+    #inv-details{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #inv-details img{
+        margin-top: 10%;
+    }
 }
-/* start of admin page */
-.adminList {
-    list-style: none;
-}
+

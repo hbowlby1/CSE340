@@ -198,6 +198,20 @@ switch ($action) {
         }
         include '../view/classification.php';
         break;
+
+    case 'getVehicleInfo':
+        $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_STRING);
+        // get the database
+        $vehicle = getInvItemInfo($invId);
+        // build html view in the vehicle-detail page
+        if (!empty($vehicle)) {
+            $vehicleDetailsDisplay = showVehicleInfo($vehicle);
+            include '../view/vehicle-detail.php';            
+        } else {
+            $message = "<p>Sorry, $vehicle[invMake] $vehicle[invModel] wasn't found in the registers.";
+        }
+
+        break;
     default:
         $classificationList = buildClassificationList($classifications);
 

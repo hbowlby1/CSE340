@@ -55,12 +55,30 @@ function buildVehiclesDisplay($vehicles)
     $dv = '<ul id="inv-display">';
     foreach ($vehicles as $vehicle) {
         $dv .= '<li>';
-        $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+        $dv .= "<a href='/phpmotors/vehicles/index.php?action=getVehicleInfo&invId=$vehicle[invId]'><img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></a>";
         $dv .= '<hr>';
-        $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
+        $dv .= "<a href='/phpmotors/vehicles/index.php?action=getVehicleInfo&invId=$vehicle[invId]'><h2>$vehicle[invMake] $vehicle[invModel]</h2></a>";
         $dv .= "<span>$vehicle[invPrice]</span>";
         $dv .= '</li>';
     }
     $dv .= '</ul>';
+    return $dv;
+}
+
+// builds the single vehicle page on the vehicle-display page
+function showVehicleInfo($vehicle)
+{
+    $dv = '<div id="inv-details">';
+        $dv .= "<img src='$vehicle[invImage]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+        $dv .= "<div id='inv-text'>";
+        $dv .= "<h2 class='detail-center'>$vehicle[invMake] $vehicle[invModel]</h2>";
+        $invPrice = $vehicle['invPrice'];
+        $invPrice = number_format($invPrice,2,'.',',');
+        $dv .= "<p class='detail-center'>Price: &#36;$invPrice</p>";
+        $dv .= "<p class='detail-center'>Color: $vehicle[invColor]</p>";
+        $dv .= "<p class='detail-center'>Stock Available: $vehicle[invStock]</p>";
+        $dv .= "<p id='vehicle-desc'>$vehicle[invDescription]</p>";
+        $dv .= "</div>";
+    $dv .= '</div>';
     return $dv;
 }
