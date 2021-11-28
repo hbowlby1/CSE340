@@ -2,7 +2,8 @@
 if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];
 }
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +18,7 @@ if (isset($_SESSION['message'])) {
     </header>
 
     <nav>
-        <?php //require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/nav.php'; 
+        <?php
         echo $navList; ?>
     </nav>
 

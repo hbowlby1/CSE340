@@ -12,6 +12,8 @@ require_once '../model/main-model.php';
 require_once '../model/vehicle-model.php';
 // get the functions file
 require_once '../library/functions.php';
+//get the uploads model function
+require_once '../model/uploads-model.php';
 
 
 // // Get the array of classifications
@@ -19,14 +21,6 @@ $classifications = getClassifications();
 
 // Build a navigation bar using the $classifications array
 $navList = buildNav($classifications);
-
-
-// $classificationList = '<select id="classificationId" name="classificationId">';
-// foreach ($classifications as $classification) {
-//     $classificationList .= "<option value=" . urlencode($classification['classificationId']) . ">" . urlencode($classification['classificationName']) . "</option>";
-// }
-// $classificationList .= '</select>';
-
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -203,6 +197,11 @@ switch ($action) {
         $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_STRING);
         // get the database
         $vehicle = getInvItemInfo($invId);
+
+        //gets the thumbanil images
+        $thumbnailsPath = getThumbnails($invId);
+        $thumbnailsList = thumbnailHTML($thumbnailsPath);
+
         // build html view in the vehicle-detail page
         if (!empty($vehicle)) {
             $vehicleDetailsDisplay = showVehicleInfo($vehicle);

@@ -307,11 +307,13 @@ label {
 
 /* start of vehicle detail page small view */
 .main{
+    display: flex;
+    flex-direction: column;
     width: 90%;
     margin: 0 auto;
 }
 
-.main img{
+.vInfoImg{
     width: 90%;
     margin-top: 10px;
     margin-left: 30px;
@@ -336,7 +338,24 @@ label {
     margin: 0 auto;
 }
 
+#thumbnail-list{
+    max-width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
 
+.alt-images{
+    width:100%;
+    height: 100%;
+    margin: 10px;
+}
+
+/* start of image upload page */
+.image-select-div{
+    max-width: 15%;
+    margin: 0 auto;
+}
 /* start of very small devices (mainly to fix nav) */
 
 @media only screen and (max-width: 420px) {
@@ -358,6 +377,9 @@ label {
         padding: 10px 28% 10px;
     }
 }
+
+
+
 
 /* start of large screen design */
 
@@ -432,8 +454,7 @@ label {
     }
 
     .imageBackground {
-        width: 30%;
-        height: 40%;
+        height: 80%;
         padding: 10px 33% 10px;
     }
 
@@ -496,13 +517,50 @@ label {
     }
 
     /* start of single vehicle page */
-    #inv-details{
+
+    .main{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 25% 1fr;
+        grid-template-rows: 1fr 1%;
+    }
+    .inv-details{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        grid-column: 2;
     }
 
-    #inv-details img{
-        margin-top: 10%;
+    .vInfoImg{
+        grid-column: 1;
+        width: 90%;
+        height: 90%;
+    }
+
+    #inv-text{
+        grid-column: 2;
+    }
+
+    #thumbnail-list{
+        max-width: 50%;;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        grid-column: 1;
+        grid-row: 1;
+        gap: 4px;
+    }
+    .alt-images{
+        width:100%;
+        height: 50%;
+        transition: 2s width, height;
+        grid-column: 1;
+
+    }
+    
+    .alt-images:hover{
+        height: 200%;
+        width: 200%;
+        transition: 2s width, height;
+
     }
 }
 

@@ -18,12 +18,16 @@
     </nav>
 
     <main>
+        <h1 class="center">Vehicle Details</h1>
         <section class="main">
-            <h1>Vehicle Details</h1>
+
 
             <?php
             if (!empty($vehicleDetailsDisplay)) {
                 echo $vehicleDetailsDisplay;
+            }
+            if (isset($thumbnailsList)) {
+                echo $thumbnailsList;
             }
             ?>
 

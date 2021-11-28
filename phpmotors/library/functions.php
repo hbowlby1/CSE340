@@ -68,8 +68,8 @@ function buildVehiclesDisplay($vehicles)
 // builds the single vehicle page on the vehicle-display page
 function showVehicleInfo($vehicle)
 {
-    $dv = '<div id="inv-details">';
-    $dv .= "<img src='$vehicle[invImage]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+    $dv = '<div class="inv-details">';
+    $dv .= "<img src='$vehicle[invImage]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com' class='vInfoImg'>";
     $dv .= "<div id='inv-text'>";
     $dv .= "<h2 class='detail-center'>$vehicle[invMake] $vehicle[invModel]</h2>";
     $invPrice = $vehicle['invPrice'];
@@ -114,12 +114,12 @@ function buildImageDisplay($imageArray)
 // Build the vehicles select list
 function buildVehiclesSelect($vehicles)
 {
-    $prodList = '<select name="invId" id="invId">';
+    $prodList = '<div class="image-select-div"><select name="invId" id="invId" class="center">';
     $prodList .= "<option>Choose a Vehicle</option>";
     foreach ($vehicles as $vehicle) {
         $prodList .= "<option value='$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</option>";
     }
-    $prodList .= '</select>';
+    $prodList .= '</select></div>';
     return $prodList;
 }
 
@@ -245,3 +245,14 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height)
     // Free any memory associated with the old image
     imagedestroy($old_image);
 } // ends resizeImage function
+
+// makes the HTML to view the thumbnail image
+function thumbnailHTML($thumbnailList)
+{
+    $html = "<span id = 'thumbnail-list'>";
+    foreach ($thumbnailList as $thumbnail) {
+        $html .= "<img src='$thumbnail[imgPath]' alt='$thumbnail[imgName]' class='alt-images'>";
+    }
+    $html .= "</span>";
+    return $html;
+}
