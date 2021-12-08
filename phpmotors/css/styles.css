@@ -351,6 +351,18 @@ label {
     margin: 10px;
 }
 
+/* review portion */
+
+#review{
+    margin-left: 20%;
+}
+
+.review-portion{
+    background-color: #aaa6a4;
+    color: black;
+}
+
+
 /* start of image upload page */
 .image-select-div{
     max-width: 15%;
@@ -561,6 +573,10 @@ label {
         width: 200%;
         transition: 2s width, height;
 
+    }
+
+    #review{
+        margin-left: 32%;
     }
 }
 
