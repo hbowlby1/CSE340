@@ -45,7 +45,7 @@
                 echo "\r\n<input type = 'submit' name='submit' id='regbtn' value='Add Review'/> ";
                 echo "\r\n<input type = 'hidden' name='action' value='addReview'/> ";
                 echo "\r\n<input type = 'hidden' name='userId'";
-                echo ' value= "'.$_SESSION['clientData']['clientId']."' " . '/> ';
+                echo ' value= "'.$_SESSION['clientData']['clientId'].'" ' . '/> ';
                 echo "\r\n<input type = 'hidden' name='carId' ";
                 echo 'value = "' . $invId . '"' . '/>';
                 echo "\r\n</form>";
